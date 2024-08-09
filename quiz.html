@@ -100,10 +100,22 @@ stats"></a></div></noscript>
     }
 
     function next_question(mult) {
-        econ_array[qn] = mult*questions[qn].effect.econ
-        dipl_array[qn] = mult*questions[qn].effect.dipl
-        govt_array[qn] = mult*questions[qn].effect.govt
-        scty_array[qn] = mult*questions[qn].effect.scty
+        freedom_array[qn] = mult*questions[qn].effect.freedom
+        power_array[qn] = mult*questions[qn].effect.power
+        culture_array[qn] = mult*questions[qn].effect.culture
+        inclusivity_array[qn] = mult*questions[qn].effect.inclusivity
+econpower_array[qn] = mult*questions[qn].effect.econpower
+        econglobe_array[qn] = mult*questions[qn].effect.econglobe
+        globe_array[qn] = mult*questions[qn].effect.globe
+        nation_array[qn] = mult*questions[qn].effect.nation
+equity_array[qn] = mult*questions[qn].effect.equity
+        horizontal_array[qn] = mult*questions[qn].effect.horizontal
+        planning_array[qn] = mult*questions[qn].effect.planning
+        regulation_array[qn] = mult*questions[qn].effect.regulation
+automation_array[qn] = mult*questions[qn].effect.automation
+        production_array[qn] = mult*questions[qn].effect.production
+        merit_array[qn] = mult*questions[qn].effect.merit
+        commonland_array[qn] = mult*questions[qn].effect.commonland
         qn++;
         if (qn < questions.length) {
             init_question();
@@ -125,15 +137,44 @@ stats"></a></div></noscript>
     }
 
     function results() {
-        let final_econ = econ_array.reduce((a, b) => a + b, 0)
-        let final_dipl = dipl_array.reduce((a, b) => a + b, 0)
-        let final_govt = govt_array.reduce((a, b) => a + b, 0)
-        let final_scty = scty_array.reduce((a, b) => a + b, 0)
+        let final_freedom = freedom_array.reduce((a, b) => a + b, 0)
+        let final_power = power_array.reduce((a, b) => a + b, 0)
+        let final_culture = culture_array.reduce((a, b) => a + b, 0)
+        let final_inclusivity = inclusivity_array.reduce((a, b) => a + b, 0)
+
+        let final_econpower = econpower_array.reduce((a, b) => a + b, 0)
+        let final_econglobe = econglobe_array.reduce((a, b) => a + b, 0)
+        let final_globe = globe_array.reduce((a, b) => a + b, 0)
+        let final_nation = nation_array.reduce((a, b) => a + b, 0)
+
+let final_equity = equity_array.reduce((a, b) => a + b, 0)
+        let final_horizontal = horizontal_array.reduce((a, b) => a + b, 0)
+        let final_planning = planning_array.reduce((a, b) => a + b, 0)
+        let final_regulation = regulation_array.reduce((a, b) => a + b, 0)
+
+let final_automation = automation_array.reduce((a, b) => a + b, 0)
+        let final_production = production_array.reduce((a, b) => a + b, 0)
+        let final_merit = merit_array.reduce((a, b) => a + b, 0)
+        let final_commonland = commonland_array.reduce((a, b) => a + b, 0)
         location.href = `results.html`
-            + `?e=${calc_score(final_econ,max_econ)}`
-            + `&d=${calc_score(final_dipl,max_dipl)}`
-            + `&g=${calc_score(final_govt,max_govt)}`
-            + `&s=${calc_score(final_scty,max_scty)}`
+            + `?e=${calc_score(final_freedom,max_freedom)}`
+            + `&d=${calc_score(final_power,max_power)}`
+            + `&g=${calc_score(final_culture,max_culture)}`
+            + `&s=${calc_score(final_inclusivity,max_inclusivity)}`
+            + `?e=${calc_score(final_econpower,max_econpower)}
+`
+            + `&d=${calc_score(final_econglobe,max_econglobe)}`
+            + `&g=${calc_score(final_globe,max_globe)}`
+            + `&s=${calc_score(final_nation,max_nation)}`
+            + `?e=${calc_score(final_equity,max_equity)}`
+            + `&d=${calc_score(final_horizontal,max_horizontal)}`
+            + `&g=${calc_score(final_planning,max_planning)}`
+            + `&s=${calc_score(final_regulation,max_regulation)}`
+            + `?e=${calc_score(final_automation,max_automation)}
+`
+            + `&d=${calc_score(final_production,max_production)}`
+            + `&g=${calc_score(final_merit,max_merit)}`
+            + `&s=${calc_score(final_commonland,max_commonland)}`
     }
 </script>
 </body>
