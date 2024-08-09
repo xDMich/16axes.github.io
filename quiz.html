@@ -48,19 +48,43 @@ stats"></a></div></noscript>
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_econ, max_dipl, max_govt, max_scty; // Max possible scores
-    max_econ = max_dipl = max_govt = max_scty = 0;
-    let econ_array = new Array(questions.length);
-    let dipl_array = new Array(questions.length);
-    let govt_array = new Array(questions.length);
-    let scty_array = new Array(questions.length);
+    var max_freedom, max_power, max_culture, max_inclusivity, max_econpower, max_econglobe, max_globe, max_nation, max_equity, max_horizontal, max_planning, max_regulation, maz_automation, max_production, max_merit, max_commonland; // Max possible scores
+    max_freedom = max_power = max_culture = max_inclusivity = max_econpower = max_econglobe = max_globe = max_nation = max_equity = max_horizontal = max_planning = max_regulation = maz_automation = max_production = max_merit = max_commonland = 0;
+    let freedom_array = new Array(questions.length);
+    let power_array = new Array(questions.length);
+    let culture_array = new Array(questions.length);
+    let inclusivity_array = new Array(questions.length);
+    let econpower_array = new Array(questions.length);
+    let econglobe_array = new Array(questions.length);
+    let globe_array = new Array(questions.length);
+    let nation_array = new Array(questions.length);
+    let equity_array = new Array(questions.length);
+    let horizontal_array = new Array(questions.length);
+    let planning_array = new Array(questions.length);
+    let regulation_array = new Array(questions.length);
+    let automation_array = new Array(questions.length);
+    let production_array = new Array(questions.length);
+    let merit_array = new Array(questions.length);
+    let commonland_array = new Array(questions.length);
     var qn = 0; // Question number
     init_question();
     for (var i = 0; i < questions.length; i++) {
-        max_econ += Math.abs(questions[i].effect.econ)
-        max_dipl += Math.abs(questions[i].effect.dipl)
-        max_govt += Math.abs(questions[i].effect.govt)
-        max_scty += Math.abs(questions[i].effect.scty)
+        max_freedom += Math.abs(questions[i].effect.freedom)
+        max_power += Math.abs(questions[i].effect.power)
+        max_culture += Math.abs(questions[i].effect.culture)
+        max_inclusivity += Math.abs(questions[i].effect.inclusivity)
+        max_econpower += Math.abs(questions[i].effect.econpower)
+        max_econglobe += Math.abs(questions[i].effect.econglobe)
+        max_globe += Math.abs(questions[i].effect.globe)
+        max_nation += Math.abs(questions[i].effect.nation)
+        max_equity += Math.abs(questions[i].effect.equity)
+        max_horizontal += Math.abs(questions[i].effect.horizontal)
+        max_planning += Math.abs(questions[i].effect.planning)
+        max_regulation += Math.abs(questions[i].effect.regulation)
+        max_automation += Math.abs(questions[i].effect.automation)
+        max_production += Math.abs(questions[i].effect.production)
+        max_merit += Math.abs(questions[i].effect.merit)
+        max_commonland += Math.abs(questions[i].effect.commonland)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
